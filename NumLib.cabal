@@ -1,0 +1,63 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c818bdedadd68f7464720c0bf35f4d1caec83a275ee64c50023b521edbb891eb
+
+name:           NumLib
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/NumLib#readme>
+homepage:       https://github.com/pgayee694/NumLib#readme
+bug-reports:    https://github.com/pgayee694/NumLib/issues
+author:         pgayee694
+maintainer:     pgayee694@gmail.com
+copyright:      2019 pgayee694
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/pgayee694/NumLib
+
+library
+  exposed-modules:
+      Lib
+      NumLib.Factoring
+  other-modules:
+      Paths_NumLib
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable NumLib-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_NumLib
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      NumLib
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite NumLib-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_NumLib
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      NumLib
+    , base >=4.7 && <5
+  default-language: Haskell2010
